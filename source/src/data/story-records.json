@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "sourceGameTable": "METADATA/REALITY/TABLES/STORIESTABLE.MBIN",
+  "sourceTableSha256": "eeb524812b8a1503220bcde6d634a984a4c1f7341cc6bfca2217b0284654325d",
+  "extractionRule": "All authored story pages; sequential pages use the final zero-based entry index, bitmask pages use every authored entry bit, and grid-backed pages use the game seen-page flag",
+  "staticEntryCount": 592,
+  "displayedEntryCount": 598,
+  "storyRecords": [
+    {
+      "categoryIndex": 0,
+      "pageIndex": 0,
+      "pageId": "UI_PORTAL_TRA_PLAQUE_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 30,
+      "targetValue": 29
+    },
+    {
+      "categoryIndex": 0,
+      "pageIndex": 1,
+      "pageId": "UI_PORTAL_TRA_LIB_TITLE",
+      "completionMode": "bitmask",
+      "entryCount": 10,
+      "targetValue": 1023
+    },
+    {
+      "categoryIndex": 0,
+      "pageIndex": 2,
+      "pageId": "UI_PORTAL_TRA_MONO_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 20,
+      "targetValue": 19
+    },
+    {
+      "categoryIndex": 0,
+      "pageIndex": 3,
+      "pageId": "UI_WIKI_WORDS_TRA_TITLE",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 1,
+      "pageIndex": 0,
+      "pageId": "UI_PORTAL_WAR_PLAQUE_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 30,
+      "targetValue": 29
+    },
+    {
+      "categoryIndex": 1,
+      "pageIndex": 1,
+      "pageId": "UI_PORTAL_WAR_LIB_TITLE",
+      "completionMode": "bitmask",
+      "entryCount": 10,
+      "targetValue": 1023
+    },
+    {
+      "categoryIndex": 1,
+      "pageIndex": 2,
+      "pageId": "UI_PORTAL_WAR_MONO_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 20,
+      "targetValue": 19
+    },
+    {
+      "categoryIndex": 1,
+      "pageIndex": 3,
+      "pageId": "UI_WIKI_WORDS_WAR_TITLE",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 2,
+      "pageIndex": 0,
+      "pageId": "UI_PORTAL_EXP_PLAQUE_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 33,
+      "targetValue": 32
+    },
+    {
+      "categoryIndex": 2,
+      "pageIndex": 1,
+      "pageId": "UI_PORTAL_EXP_LIB_TITLE",
+      "completionMode": "bitmask",
+      "entryCount": 10,
+      "targetValue": 1023
+    },
+    {
+      "categoryIndex": 2,
+      "pageIndex": 2,
+      "pageId": "UI_PORTAL_EXP_MONO_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 19,
+      "targetValue": 18
+    },
+    {
+      "categoryIndex": 2,
+      "pageIndex": 3,
+      "pageId": "UI_WIKI_WORDS_EXP_TITLE",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 4,
+      "pageIndex": 0,
+      "pageId": "INTRCT_ATLASSTATION",
+      "completionMode": "sequential-index",
+      "entryCount": 12,
+      "targetValue": 11
+    },
+    {
+      "categoryIndex": 4,
+      "pageIndex": 1,
+      "pageId": "UI_WIKI_WORDS_ATL_TITLE",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 4,
+      "pageIndex": 2,
+      "pageId": "UI_GUIDE_HEADING_RUNES_CATA",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 0,
+      "pageId": "UI_PORTAL_CORE_NAME",
+      "completionMode": "sequential-index",
+      "entryCount": 52,
+      "targetValue": 51
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 1,
+      "pageId": "UI_BASELOG_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 21,
+      "targetValue": 20
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 2,
+      "pageId": "UI_OVERSEER_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 13,
+      "targetValue": 12
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 3,
+      "pageId": "UI_SCIENTIST_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 14,
+      "targetValue": 13
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 4,
+      "pageId": "UI_WEAPGUY_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 8,
+      "targetValue": 7
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 5,
+      "pageId": "UI_FARMER_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 11,
+      "targetValue": 10
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 6,
+      "pageId": "UI_EXOTUT_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 17,
+      "targetValue": 16
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 7,
+      "pageId": "UI_WATERMISSION_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 12,
+      "targetValue": 11
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 8,
+      "pageId": "UI_BIO_SHIP_MISSION_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 14,
+      "targetValue": 13
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 9,
+      "pageId": "UI_PORTAL_WORMLORE_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 6,
+      "targetValue": 5
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 10,
+      "pageId": "UI_SEASON_14_NAME",
+      "completionMode": "sequential-index",
+      "entryCount": 6,
+      "targetValue": 5
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 11,
+      "pageId": "UI_SENT_MISS_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 21,
+      "targetValue": 20
+    },
+    {
+      "categoryIndex": 5,
+      "pageIndex": 12,
+      "pageId": "UI_PIRATESMISS_NAME",
+      "completionMode": "sequential-index",
+      "entryCount": 8,
+      "targetValue": 7
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 0,
+      "pageId": "BUILDING_ABANDONED_L",
+      "completionMode": "sequential-index",
+      "entryCount": 34,
+      "targetValue": 33
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 1,
+      "pageId": "BUILDING_FREIGHTER_ALT",
+      "completionMode": "sequential-index",
+      "entryCount": 20,
+      "targetValue": 19
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 2,
+      "pageId": "INTRCT_CAVEGRAVE",
+      "completionMode": "sequential-index",
+      "entryCount": 16,
+      "targetValue": 15
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 3,
+      "pageId": "BUILDING_GLITCHYSTORYBOX_L",
+      "completionMode": "sequential-index",
+      "entryCount": 30,
+      "targetValue": 29
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 4,
+      "pageId": "UI_WATER_RELIC_NAME_L",
+      "completionMode": "sequential-index",
+      "entryCount": 8,
+      "targetValue": 7
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 5,
+      "pageId": "UI_DERELICT1_LABEL",
+      "completionMode": "bitmask",
+      "entryCount": 19,
+      "targetValue": 524287
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 6,
+      "pageId": "UI_SENTINEL_HIVE_NAME",
+      "completionMode": "sequential-index",
+      "entryCount": 22,
+      "targetValue": 21
+    },
+    {
+      "categoryIndex": 7,
+      "pageIndex": 7,
+      "pageId": "UI_CORE_EPILOGUE_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 4,
+      "targetValue": 3
+    },
+    {
+      "categoryIndex": 8,
+      "pageIndex": 0,
+      "pageId": "UI_PORTAL_BUI_MONO_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 12,
+      "targetValue": 11
+    },
+    {
+      "categoryIndex": 8,
+      "pageIndex": 1,
+      "pageId": "UI_WIKI_WORDS_BUI_TITLE",
+      "completionMode": "grid-page",
+      "entryCount": 1,
+      "targetValue": 1
+    },
+    {
+      "categoryIndex": 8,
+      "pageIndex": 2,
+      "pageId": "UI_ROBOMISS_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 17,
+      "targetValue": 16
+    },
+    {
+      "categoryIndex": 8,
+      "pageIndex": 3,
+      "pageId": "UI_PURPM_TITLE",
+      "completionMode": "sequential-index",
+      "entryCount": 13,
+      "targetValue": 12
+    }
+  ]
+}

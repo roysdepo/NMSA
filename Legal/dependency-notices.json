@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "bundleEvidence": [
+    {
+      "id": "jszip-browser-dist-3.10.1",
+      "package": "jszip",
+      "version": "3.10.1",
+      "upstreamFile": "dist/jszip.min.js",
+      "sha256": "acc7e41455a80765b5fd9c7ee1b8078a6d160bbbca455aeae854de65c947d59e",
+      "embeddedDependencies": [
+        "immediate",
+        "lie",
+        "pako",
+        "setimmediate"
+      ]
+    }
+  ],
+  "groups": {
+    "common": [
+      {
+        "name": "immediate",
+        "version": "3.0.6",
+        "license": "MIT",
+        "bundledBy": "jszip-browser-dist-3.10.1",
+        "files": [
+          {
+            "name": "npm-immediate-3.0.6-LICENSE.txt",
+            "sha256": "809e66de579fb7d92503848bbe6d1f348f4f6521a71e5d294fe7cc0c87a3b4ff",
+            "upstreamFile": "LICENSE.txt"
+          }
+        ]
+      },
+      {
+        "name": "jszip",
+        "version": "3.10.1",
+        "license": "MIT",
+        "declaredLicense": "(MIT OR GPL-3.0-or-later)",
+        "files": [
+          {
+            "name": "npm-jszip-3.10.1-LICENSE.txt",
+            "sha256": "566c953c6090b1218ca6217dd7359d45dde46581968586dc607d59a78af6a9c4",
+            "upstreamFile": "LICENSE.markdown",
+            "note": "NMSA distributes JSZip under the MIT option stated in this exact upstream file."
+          }
+        ]
+      },
+      {
+        "name": "lie",
+        "version": "3.3.0",
+        "license": "MIT",
+        "bundledBy": "jszip-browser-dist-3.10.1",
+        "files": [
+          {
+            "name": "npm-lie-3.3.0-LICENSE.txt",
+            "sha256": "5c81b0caa98593408b03125efa25efe622341ed87ae55561968828cd887d64a4",
+            "upstreamFile": "license.md"
+          }
+        ]
+      },
+      {
+        "name": "lossless-json",
+        "version": "4.3.0",
+        "license": "MIT",
+        "files": [
+          {
+            "name": "npm-lossless-json-4.3.0-LICENSE.txt",
+            "sha256": "525f1b720bc4ba077eba7a82e3c357bfb55ebcfe1ae0aaa509ba6110a024a445",
+            "upstreamFile": "LICENSE.md"
+          }
+        ]
+      },
+      {
+        "name": "lz4js",
+        "version": "0.2.0",
+        "license": "ISC",
+        "files": [
+          {
+            "name": "npm-lz4js-0.2.0-ISC-LICENSE.txt",
+            "sha256": "90212418950710c60dcb77453c5d20496520998f07b0e80ec6f2e5768988af4d",
+            "provenance": "Canonical SPDX ISC terms derived from the package's declared ISC identifier; no copyright holder is inferred because upstream supplies none.",
+            "reference": "https://spdx.org/licenses/ISC.html"
+          },
+          {
+            "name": "npm-lz4js-0.2.0-LICENSE-METADATA.txt",
+            "sha256": "683538e928de4f5c7a884450dad938980896414a9ea75ec28dc4b215fcd31bdb",
+            "upstreamFile": "package.json",
+            "note": "The npm tarball and upstream repository contain no standalone license file; this preserves the exact author and ISC declaration."
+          }
+        ]
+      },
+      {
+        "name": "pako",
+        "version": "1.0.11",
+        "license": "(MIT AND Zlib)",
+        "bundledBy": "jszip-browser-dist-3.10.1",
+        "files": [
+          {
+            "name": "npm-pako-1.0.11-LICENSE.txt",
+            "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539",
+            "upstreamFile": "LICENSE"
+          },
+          {
+            "name": "npm-pako-1.0.11-zlib-README.txt",
+            "sha256": "d8b499598e43d755ea8918448128259ff01820c50d94d5a48c8883d0a594ddb1",
+            "upstreamFile": "lib/zlib/README",
+            "note": "Exact upstream zlib attribution and license for the zlib-derived source embedded by pako."
+          }
+        ]
+      },
+      {
+        "name": "setimmediate",
+        "version": "1.0.5",
+        "license": "MIT",
+        "bundledBy": "jszip-browser-dist-3.10.1",
+        "files": [
+          {
+            "name": "npm-setimmediate-1.0.5-LICENSE.txt",
+            "sha256": "c4b4ad3a5746f1f5249a6dd90396ec519264e1bb02e01e48a6522c48a3a97cb4",
+            "upstreamFile": "LICENSE.txt"
+          }
+        ]
+      }
+    ],
+    "desktopOnly": [
+      {
+        "name": "Microsoft.Web.WebView2",
+        "version": "1.0.4078.44",
+        "license": "BSD-3-Clause",
+        "files": [
+          {
+            "name": "Microsoft.Web.WebView2-1.0.4078.44-LICENSE.txt",
+            "sha256": "0af8f1b807512aae39c2ac1aa4d0cae65cabecb6fd554b8439a5162a0d6eca55"
+          },
+          {
+            "name": "Microsoft.Web.WebView2-1.0.4078.44-NOTICE.txt",
+            "sha256": "106423785c5b7eba0a8e61d1837f2132e9c828e20ad530f565d981c1df60dd90"
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.NETCore.App.Runtime.win-x64",
+        "version": "10.0.11",
+        "license": "MIT",
+        "files": [
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64-10.0.11-LICENSE.txt",
+            "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64-10.0.11-THIRD-PARTY-NOTICES.txt",
+            "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+          }
+        ]
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+        "version": "10.0.11",
+        "license": "MIT",
+        "files": [
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64-10.0.11-LICENSE.txt",
+            "sha256": "a89886665765362eb77e0f8e26602c924520041d1711b2eedc136434fe4d01ab"
+          }
+        ]
+      }
+    ]
+  }
+}

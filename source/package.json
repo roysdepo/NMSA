@@ -1,0 +1,39 @@
+{
+  "name": "nmsa-no-mans-sky-atlas",
+  "version": "3.0.6",
+  "private": true,
+  "type": "module",
+  "description": "NMSA is a local-first No Man's Sky completion, repair, backup, verification and rollback tool.",
+  "scripts": {
+    "validate:data": "node scripts/validate_data.mjs",
+    "audit:templates": "node scripts/audit_save_templates.mjs",
+    "build:templates": "node scripts/build_save_templates.mjs",
+    "build:data-pack": "node scripts/build_data_pack.mjs",
+    "build": "npm run build:templates && npm run validate:data && node scripts/build.mjs && npm run build:data-pack",
+    "benchmark": "node --expose-gc scripts/benchmark.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "package": "node scripts/package.mjs",
+    "package:dev": "npm run build && npm test && node scripts/package.mjs --developer --developer-revision=3",
+    "release": "npm run build && npm test && npm run package",
+    "desktop:restore": "dotnet restore NMSA.slnx -p:PublishReadyToRun=true --locked-mode",
+    "desktop:build": "dotnet build NMSA.slnx --configuration Release --no-restore -m:1",
+    "desktop:verify": "dotnet run --project desktop/AtlasComplete.Desktop.Verification/AtlasComplete.Desktop.Verification.csproj --configuration Release --no-build",
+    "desktop:publish": "dotnet publish desktop/AtlasComplete.Desktop/AtlasComplete.Desktop.csproj --configuration Release --runtime win-x64 --self-contained true --no-restore -p:PublishSingleFile=true -p:PublishReadyToRun=true -p:IncludeNativeLibrariesForSelfExtract=true -p:DebugType=None -p:DebugSymbols=false --output desktop/publish/win-x64",
+    "desktop:sign": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/sign-windows.ps1 -Path desktop/publish/win-x64/NMSA.exe",
+    "desktop:package": "node scripts/package-desktop.mjs",
+    "desktop:package:unsigned": "node scripts/package-desktop.mjs --allow-unsigned",
+    "desktop:package:dev": "node scripts/package-desktop.mjs --allow-unsigned --developer-revision=3",
+    "desktop:installer": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/package-msix.ps1",
+    "desktop:installer:store": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/package-msix.ps1 -StoreSubmission",
+    "desktop:release": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/release-desktop.ps1",
+    "desktop:store": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File scripts/release-desktop-store.ps1"
+  },
+  "dependencies": {
+    "jszip": "3.10.1",
+    "lossless-json": "4.3.0",
+    "lz4js": "0.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.6"
+  }
+}

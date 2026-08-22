@@ -1,0 +1,58 @@
+source/.dotnet/
+source/.dotnet-home/
+source/.dotnet-cli-home/
+source/.nuget/
+source/node_modules/
+source/dist/
+source/release/
+source/desktop/**/bin/
+source/desktop/**/obj/
+source/desktop/publish/
+source/desktop/.nmsa-msix-*/
+
+# Generated distribution mirrors. Rebuild them from source; GitHub Releases
+# carries user-facing artifacts.
+/NMSA.html
+/Atlas-Complete.html
+/Open Atlas Complete.cmd
+/Data Packages/
+/.codebase-memory/
+/.agents/
+/.codex/
+
+# Editor, test, operating-system, and local environment state.
+.vs/
+.vscode/
+.idea/
+TestResults/
+coverage/
+*.trx
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+
+# Signing credentials and private keys must never enter source control.
+*.pfx
+*.p12
+*.pvk
+*.key
+*.snk
+artifact-signing-metadata.json
+
+# Never commit user saves, platform profiles, recovery data, or built packages.
+*.hg
+*.vdf
+GCUSERSETTINGSDATA.MXML
+containers.index
+*.zip
+*.msix
+*.msixbundle
+*.appx
+*.appxbundle
+*.exe
+*.dll
+*.pdb
+NMSA-Backups/

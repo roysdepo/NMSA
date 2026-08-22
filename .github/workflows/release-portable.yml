@@ -1,0 +1,59 @@
+name: Release portable build
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: source
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Audit production dependencies
+        run: npm audit --omit=dev
+      - name: Build, test, and package portable release
+        run: npm run release
+      - name: Create immutable GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > release-notes.md <<'EOF'
+          ## Windows portable download
+
+          1. Download `NMSA-Portable-v*.zip` and extract it completely.
+          2. Fully close No Man's Sky.
+          3. Double-click **NMSA - No Man's Sky Atlas**.
+
+          The standalone `NMSA.html` asset is a browser-only recovery-package
+          fallback. It does not provide the normal installed-save workflow.
+
+          Source code is available under AGPL-3.0-only from the matching tag.
+          EOF
+          gh release create "${GITHUB_REF_NAME}" \
+            release/NMSA-Portable-v*.zip \
+            release/NMSA-Portable-v*-SHA256.txt \
+            release/NMSA.html \
+            --verify-tag \
+            --title "NMSA ${GITHUB_REF_NAME}" \
+            --notes-file release-notes.md

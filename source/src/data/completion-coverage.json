@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "finiteFamilies": [
+    { "key": "knownProducts", "storage": "PlayerStateData.KnownProducts", "mode": "complete" },
+    { "key": "knownSpecials", "storage": "PlayerStateData.KnownSpecials and UserSettingsData.UnlockedSpecials", "mode": "complete" },
+    { "key": "knownTechnologies", "storage": "PlayerStateData.KnownTech and UserSettingsData.SeenTechnologies", "mode": "complete" },
+    { "key": "refinerRecipes", "storage": "PlayerStateData.KnownRefinerRecipes", "mode": "complete" },
+    { "key": "wordGroups", "storage": "PlayerStateData.KnownWordGroups", "mode": "complete" },
+    { "key": "seasonRewards", "storage": "UserSettingsData.UnlockedSeasonRewards and PlayerStateData.RedeemedSeasonRewards", "mode": "complete" },
+    { "key": "twitchRewards", "storage": "UserSettingsData.UnlockedTwitchRewards and PlayerStateData.RedeemedTwitchRewards", "mode": "complete" },
+    { "key": "titles", "storage": "UserSettingsData.UnlockedTitles", "mode": "complete" },
+    { "key": "seenSubstances", "storage": "UserSettingsData.SeenSubstances", "mode": "complete" },
+    { "key": "wikiTopics", "storage": "UserSettingsData.SeenWikiTopics and UserSettingsData.UnlockedWikiTopics", "mode": "complete" },
+    { "key": "fossilRecords", "storage": "UserSettingsData.SeenProducts", "mode": "complete" },
+    { "key": "fishingRecords", "storage": "PlayerStateData.FishingRecord", "mode": "complete-structured" },
+    { "key": "seenBaseBuildingObjects", "storage": "PlayerStateData.SeenBaseBuildingObjects", "mode": "complete" },
+    { "key": "storyRecords", "storage": "PlayerStateData.SeenStories", "mode": "complete-structured" },
+    { "key": "anomalousBasePartRecords", "storage": "PlayerStateData.WonderWeirdBasePartRecords", "mode": "complete-structured" }
+  ],
+  "dynamicFiniteFamilies": [
+    { "key": "portalRunes", "storage": "PlayerStateData.KnownPortalRunes", "mode": "complete-bitmask" },
+    { "key": "petSlots", "storage": "PlayerStateData.UnlockedPetSlots", "mode": "complete-existing-slots" },
+    { "key": "squadronSlots", "storage": "PlayerStateData.SquadronUnlockedPilotSlots", "mode": "complete-existing-slots" }
+  ],
+  "contextualFamilies": [
+    { "key": "contextualKnownProducts", "storage": "PlayerStateData.KnownProducts", "mode": "preserve-context", "reason": "PURPM key products are controlled by mission and selected-snapshot state." },
+    { "key": "platformRewards", "storage": "UserSettingsData.UnlockedPlatformRewards and PC MXML", "mode": "licensed-opt-in", "reason": "Platform rewards are storefront, preorder, or platform scoped and are not universal completion requirements." },
+    { "key": "contentEntitlements", "storage": "UserSettingsData.UnlockedPlatformRewards and PC MXML", "mode": "licensed-opt-in", "reason": "Content entitlements are licensed state and are not universal completion requirements." },
+    { "key": "disallowedSeenTechnologies", "storage": "UserSettingsData.SeenTechnologies", "mode": "preserve-observed", "reason": "The game preserves or regenerates internal technology identifiers in SeenTechnologies." },
+    { "key": "speculativeShipComponentRecords", "storage": "UserSettingsData.SeenProducts", "mode": "diagnostic-only", "reason": "These identifiers were generated from naming grammar rather than an authoritative game table." },
+    { "key": "naturalProgressionTargets", "storage": "PlayerStateData.Stats.^GLOBAL_STATS", "mode": "explicit-opt-in", "reason": "Milestones and standings reflect player progression and are not core save integrity." }
+  ],
+  "preservedProceduralFamilies": [
+    { "key": "universeDiscoveries", "storage": "DiscoveryManagerData.DiscoveryData-v1.Store.Record", "reason": "Procedurally generated universe records have no finite master list." },
+    { "key": "planetWonders", "storage": "PlayerStateData.WonderPlanetRecords", "reason": "Records must reference real discoveries in this save." },
+    { "key": "creatureWonders", "storage": "PlayerStateData.WonderCreatureRecords", "reason": "Records must reference real discoveries in this save." },
+    { "key": "floraWonders", "storage": "PlayerStateData.WonderFloraRecords", "reason": "Records must reference real discoveries in this save." },
+    { "key": "mineralWonders", "storage": "PlayerStateData.WonderMineralRecords", "reason": "Records must reference real discoveries in this save." },
+    { "key": "treasureWonders", "storage": "PlayerStateData.WonderTreasureRecords", "reason": "Artifact identifiers and values are procedural." },
+    { "key": "customWonders", "storage": "PlayerStateData.WonderCustomRecords and WonderCustomRecordsExtraData", "reason": "These are player-selected records, not a finite catalogue." }
+  ],
+  "definitionOnlyFamilies": [
+    { "key": "colourPalettes", "currentRows": 80, "reason": "Game definitions have no independent save unlock array; reward products control restricted appearances." },
+    { "key": "companionAccessories", "currentRows": 32, "reason": "Accessory definitions are per-companion customisation choices, not learned account records." },
+    { "key": "creatureDescriptors", "currentRows": 64, "reason": "Descriptor definitions generate procedural creatures and are not discoveries themselves." },
+    { "key": "creatureSpecies", "currentRows": 85, "reason": "Species archetypes generate procedural discoveries and are not finite discovery records." },
+    { "key": "frigateTraits", "currentRows": 178, "reason": "Traits belong to generated frigate instances, not a learned account catalogue." },
+    { "key": "settlementPerks", "currentRows": 90, "reason": "Perks belong to individual settlements and are not global unlock records." },
+    { "key": "petBattleMoves", "currentRows": 61, "reason": "Moves belong to individual companion state and are not global unlock records." },
+    { "key": "petBattleMovesets", "currentRows": 6, "reason": "Movesets belong to individual companion state and are not global unlock records." },
+    { "key": "proceduralUpgradeModules", "currentRows": 253, "reason": "Generated upgrade-module instances are inventory objects, not learnable blueprints." }
+  ],
+  "preservedStateFamilies": [
+    { "key": "legacyKnownWords", "storage": "PlayerStateData.KnownWords", "reason": "Current saves use KnownWordGroups; the legacy array remains empty in natural current saves." },
+    { "key": "usedEntitlements", "storage": "PlayerStateData.UsedEntitlements", "reason": "This is transaction/use history, not the account entitlement list." },
+    { "key": "redeemedPlatformRewards", "storage": "PlayerStateData.RedeemedPlatformRewards", "reason": "Per-save claiming history is preserved; account unlock state is completed separately." },
+    { "key": "selectedAppearanceAndTitle", "storage": "PlayerStateData customisation and BannerTitleId", "reason": "Selections are not completion records and remain the player's choices." },
+    { "key": "missionsAndNarrativeState", "storage": "PlayerStateData mission, interaction, and narrative fields", "reason": "Setting narrative flags without their dependent state would create an inconsistent save." },
+    { "key": "ownedProceduralObjects", "storage": "inventories, ships, multitools, freighters, frigates, companions, settlements, and bases", "reason": "Owned instances are not finite catalogue records and are preserved." }
+  ],
+  "excludedInternalFamilies": [
+    { "key": "disallowedKnownTechnologies", "reason": "Damage slots, maintenance entries, dummy, obsolete, and internal technologies are not learnable blueprints." },
+    { "key": "temporaryProducts", "reason": "Temporary bait, fossil placeholders, pipe placeholders, maintenance products, and hidden records are not player-facing unlocks." },
+    { "key": "unboundedLifetimeCounters", "reason": "Counters without a final game tier are preserved; only known editor sentinels are repaired." }
+  ]
+}

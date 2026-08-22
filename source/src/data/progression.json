@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 2,
+  "naturalProgressionTargets": [
+    {
+      "id": "^DIST_WALKED",
+      "label": "On-foot exploration",
+      "category": "Journey milestones",
+      "target": 100000,
+      "storage": "float"
+    },
+    {
+      "id": "^ALIENS_MET",
+      "label": "Alien encounters",
+      "category": "Journey milestones",
+      "target": 150,
+      "storage": "int"
+    },
+    {
+      "id": "^WORDS_LEARNT",
+      "label": "Words collected",
+      "category": "Journey milestones",
+      "source": "knownWordGroups",
+      "storage": "int"
+    },
+    {
+      "id": "^MONEY",
+      "label": "Most units accrued",
+      "category": "Journey milestones",
+      "target": 100000000,
+      "storage": "int"
+    },
+    {
+      "id": "^ENEMIES_KILLED",
+      "label": "Ships destroyed",
+      "category": "Journey milestones",
+      "target": 150,
+      "storage": "int"
+    },
+    {
+      "id": "^SENTINEL_KILLS",
+      "label": "Sentinels destroyed",
+      "category": "Journey milestones",
+      "target": 150,
+      "storage": "int"
+    },
+    {
+      "id": "^LONGEST_LIFE_EX",
+      "label": "Extreme survival",
+      "category": "Journey milestones",
+      "target": 43200,
+      "storage": "float"
+    },
+    {
+      "id": "^DIST_WARP",
+      "label": "Space exploration",
+      "category": "Journey milestones",
+      "target": 75,
+      "storage": "int"
+    },
+    {
+      "id": "^DISC_ALL_CREATU",
+      "label": "Planetary zoology",
+      "category": "Journey milestones",
+      "target": 10,
+      "storage": "int"
+    },
+    {
+      "id": "^TWORDS_LEARNT",
+      "label": "Gek words learned",
+      "category": "Language milestones",
+      "source": "raceWords0",
+      "storage": "int"
+    },
+    {
+      "id": "^WWORDS_LEARNT",
+      "label": "Vy'keen words learned",
+      "category": "Language milestones",
+      "source": "raceWords1",
+      "storage": "int"
+    },
+    {
+      "id": "^EWORDS_LEARNT",
+      "label": "Korvax words learned",
+      "category": "Language milestones",
+      "source": "raceWords2",
+      "storage": "int"
+    },
+    {
+      "id": "^TSEEN_SYSTEMS",
+      "label": "Gek systems visited",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^WSEEN_SYSTEMS",
+      "label": "Vy'keen systems visited",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^ESEEN_SYSTEMS",
+      "label": "Korvax systems visited",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^TDONE_MISSIONS",
+      "label": "Gek missions completed",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^WDONE_MISSIONS",
+      "label": "Vy'keen missions completed",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^EDONE_MISSIONS",
+      "label": "Korvax missions completed",
+      "category": "Race milestones",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^TRA_STANDING",
+      "label": "Gek standing",
+      "category": "Race standing",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^WAR_STANDING",
+      "label": "Vy'keen standing",
+      "category": "Race standing",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^EXP_STANDING",
+      "label": "Korvax standing",
+      "category": "Race standing",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^BUI_STANDING",
+      "label": "Autophage standing",
+      "category": "Race standing",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^TGUILD_STAND",
+      "label": "Merchants Guild standing",
+      "category": "Merchants Guild",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^TGDONE_MISSIONS",
+      "label": "Merchants Guild missions",
+      "category": "Merchants Guild",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^PLANTS_PLANTED",
+      "label": "Plants farmed",
+      "category": "Merchants Guild",
+      "target": 80,
+      "storage": "int"
+    },
+    {
+      "id": "^PROC_PRODS",
+      "label": "Crafted products",
+      "category": "Merchants Guild",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^WGUILD_STAND",
+      "label": "Mercenaries Guild standing",
+      "category": "Mercenaries Guild",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^WGDONE_MISSIONS",
+      "label": "Mercenaries Guild missions",
+      "category": "Mercenaries Guild",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^PIRATES_KILLED",
+      "label": "Pirates defeated",
+      "category": "Mercenaries Guild",
+      "target": 80,
+      "storage": "int"
+    },
+    {
+      "id": "^FIENDS_KILLED",
+      "label": "Biological horrors defeated",
+      "category": "Mercenaries Guild",
+      "target": 250,
+      "storage": "int"
+    },
+    {
+      "id": "^EGUILD_STAND",
+      "label": "Explorers Guild standing",
+      "category": "Explorers Guild",
+      "target": 100,
+      "storage": "int"
+    },
+    {
+      "id": "^EGDONE_MISSIONS",
+      "label": "Explorers Guild missions",
+      "category": "Explorers Guild",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^RARE_SCANNED",
+      "label": "Rare creatures scanned",
+      "category": "Explorers Guild",
+      "target": 50,
+      "storage": "int"
+    },
+    {
+      "id": "^DISC_FLORA",
+      "label": "Flora discovered",
+      "category": "Explorers Guild",
+      "target": 300,
+      "storage": "int"
+    },
+    {
+      "id": "^PIRATE_STAND",
+      "label": "Outlaw standing",
+      "category": "Outlaws",
+      "target": 150,
+      "storage": "int"
+    },
+    {
+      "id": "^PIRATE_MISSIONS",
+      "label": "Outlaw missions",
+      "category": "Outlaws",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^BOUNTIES",
+      "label": "Bounties completed",
+      "category": "Outlaws",
+      "target": 40,
+      "storage": "int"
+    },
+    {
+      "id": "^TRADERS_KILLED",
+      "label": "Traders defeated",
+      "category": "Outlaws",
+      "target": 40,
+      "storage": "int"
+    },
+    {
+      "id": "^SMUGGLE_VALUE",
+      "label": "Smuggled goods value",
+      "category": "Outlaws",
+      "target": 50000000,
+      "storage": "int"
+    },
+    {
+      "id": "^NANITES_EVER",
+      "label": "Nanites earned",
+      "category": "Additional ranked milestones",
+      "target": 100000,
+      "storage": "int"
+    },
+    {
+      "id": "^WALKERS_KILLED",
+      "label": "Sentinel Walkers defeated",
+      "category": "Additional ranked milestones",
+      "target": 40,
+      "storage": "int"
+    },
+    {
+      "id": "^PB_BOSS_WINS",
+      "label": "Arena champions defeated",
+      "category": "Xeno Arena",
+      "target": 60,
+      "storage": "int"
+    },
+    {
+      "id": "^PB_WINS",
+      "label": "Holo-Arena victories",
+      "category": "Xeno Arena",
+      "target": 220,
+      "storage": "int"
+    },
+    {
+      "id": "^PB_PETS_MAXED",
+      "label": "Companions fully mutated",
+      "category": "Xeno Arena",
+      "target": 20,
+      "storage": "int"
+    },
+    {
+      "id": "^PB_D_NEXUS",
+      "label": "Oceanus battles won",
+      "category": "Xeno Arena",
+      "target": 30,
+      "storage": "int"
+    },
+    {
+      "id": "^EGGS_HATCHED",
+      "label": "Companion eggs hatched",
+      "category": "Xeno Arena",
+      "target": 30,
+      "storage": "int"
+    },
+    { "id": "^HOME_REALITY", "label": "Reality-glitch decorations collected", "category": "Title-backed completion", "target": 9, "storage": "int" },
+    { "id": "^DISC_P_WEIRD", "label": "Exotic planets discovered", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DISC_RARE_SYS", "label": "Rare systems discovered", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^BLACKHOLE_WARPS", "label": "Black-hole warps", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^PORTAL_WARPS", "label": "Portal warps", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^MP_EVENT_COUNT", "label": "Community missions completed", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^COMM_CONTRIBUTE", "label": "Community research contributions", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^LONGEST_LIFE", "label": "Longest survival", "category": "Title-backed completion", "target": 28800, "storage": "float" },
+    { "id": "^DISC_SYSTEMS", "label": "Systems discovered", "category": "Title-backed completion", "target": 100, "storage": "int" },
+    { "id": "^DISC_CREATURES", "label": "Creatures discovered", "category": "Title-backed completion", "target": 100, "storage": "int" },
+    { "id": "^DISC_MINERALS", "label": "Minerals discovered", "category": "Title-backed completion", "target": 100, "storage": "int" },
+    { "id": "^PETS_OWNED", "label": "Companions adopted", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^EGGS_GOT", "label": "Companion eggs received", "category": "Title-backed completion", "target": 4, "storage": "int" },
+    { "id": "^EGGS_MODDED", "label": "Companion eggs sequenced", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^PARTS_PLACED", "label": "Base parts placed", "category": "Title-backed completion", "target": 200, "storage": "int" },
+    { "id": "^FRIGATES", "label": "Frigates recruited", "category": "Title-backed completion", "target": 30, "storage": "int" },
+    { "id": "^TREASURE_FOUND", "label": "Treasures found", "category": "Title-backed completion", "target": 30, "storage": "int" },
+    { "id": "^ABAND_FREIGHTER", "label": "Derelict freighters explored", "category": "Title-backed completion", "target": 25, "storage": "int" },
+    { "id": "^FISH_CAUGHT", "label": "Fish caught", "category": "Title-backed completion", "target": 250, "storage": "int" },
+    { "id": "^FISH_LEGEND", "label": "Legendary fish caught", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_HOT", "label": "Extreme-heat survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_COLD", "label": "Extreme-cold survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_RAD", "label": "Radiation survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_TOXIC", "label": "Toxicity survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_CREATURE", "label": "Creature encounter history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_DROWN", "label": "Underwater survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_ENERGY", "label": "Hazard survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_ROBOT", "label": "Sentinel encounter history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_ACCIDENT", "label": "Accident survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_FALL", "label": "Fall survival history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^DEATH_HORROR", "label": "Horror encounter history", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^EXP_SCAVENGER_8", "label": "Scavenger objective completed", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^JUDGEMENTS", "label": "Autophage judgements made", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^C_SENT_KILLS", "label": "Corrupted Sentinels destroyed", "category": "Title-backed completion", "target": 80, "storage": "int" },
+    { "id": "^CORRUPT_PILLAR", "label": "Dissonance resonators destroyed", "category": "Title-backed completion", "target": 15, "storage": "int" },
+    { "id": "^CARGO_DESTROYED", "label": "Cargo pods destroyed", "category": "Title-backed completion", "target": 200, "storage": "int" },
+    { "id": "^CARGO_SCRAP", "label": "Salvaged cargo recovered", "category": "Title-backed completion", "target": 75, "storage": "int" },
+    { "id": "^CARGO_EXP", "label": "Exploration cargo recovered", "category": "Title-backed completion", "target": 50, "storage": "int" },
+    { "id": "^CARGO_RAD", "label": "Radioactive cargo recovered", "category": "Title-backed completion", "target": 50, "storage": "int" },
+    { "id": "^CARGO_TOX", "label": "Toxic cargo recovered", "category": "Title-backed completion", "target": 50, "storage": "int" },
+    { "id": "^EXO_SMASH", "label": "Objects destroyed by exocraft", "category": "Title-backed completion", "target": 500, "storage": "int" },
+    { "id": "^FISH_BOOT", "label": "Boots caught", "category": "Title-backed completion", "target": 5, "storage": "int" },
+    { "id": "^BONES_FOUND", "label": "Ancient bones found", "category": "Title-backed completion", "target": 200, "storage": "int" },
+    { "id": "^JELLYBOSS", "label": "Abyssal jellyfish defeated", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^FISH_CASH", "label": "Fishing income", "category": "Title-backed completion", "target": 1000000, "storage": "int" },
+    { "id": "^GIFTS_GIVEN", "label": "Gifts given", "category": "Title-backed completion", "target": 1, "storage": "int" },
+    { "id": "^FISH_RELEASED", "label": "Fish released", "category": "Title-backed completion", "target": 60, "storage": "int" }
+  ],
+  "naturalStatRepairs": [
+    { "id": "^DIST_MY_BIGGS", "label": "Own Corvette travel", "target": 0, "storage": "float" },
+    { "id": "^EX_HOT_WALK", "label": "Extreme heat travel", "target": 0, "storage": "float" },
+    { "id": "^ROAD_KILL", "label": "Exocraft road kills", "target": 0, "storage": "int" },
+    { "id": "^EX_COLD_WALK", "label": "Extreme cold travel", "target": 0, "storage": "float" },
+    { "id": "^GRUBS_KILLED", "label": "Grubs defeated", "target": 0, "storage": "int" },
+    { "id": "^QUEENS_KILLED", "label": "Brood queens defeated", "target": 0, "storage": "int" },
+    { "id": "^SPIDERS_KILLED", "label": "Spiders defeated", "target": 0, "storage": "int" },
+    { "id": "^FLORA_KILLED", "label": "Hazardous flora destroyed", "target": 0, "storage": "int" },
+    { "id": "^AMMO_FIRED", "label": "Ammunition fired", "target": 0, "storage": "int" },
+    { "id": "^DIST_CRE_RIDE", "label": "Creature travel", "target": 0, "storage": "float" },
+    { "id": "^DIST_SWAM", "label": "Swimming distance", "target": 0, "storage": "float" },
+    { "id": "^NPCS_RESCUED", "label": "NPCs rescued", "target": 0, "storage": "int" },
+    { "id": "^SPACE_BATTLES", "label": "Space battles", "target": 0, "storage": "int" },
+    { "id": "^FISH_TRAPPED", "label": "Fish trapped", "target": 0, "storage": "int" },
+    { "id": "^FISH_KILLS", "label": "Fish defeated", "target": 0, "storage": "int" },
+    { "id": "^CIV_FREI_KILLS", "label": "Civilian freighters destroyed", "target": 0, "storage": "int" },
+    { "id": "^DICE_GAME_WON", "label": "Dice games won", "target": 0, "storage": "int" },
+    { "id": "^QUADS_KILLED", "label": "Sentinel quadrupeds defeated", "target": 0, "storage": "int" },
+    { "id": "^JM_BANKED", "label": "Junk metal banked", "target": 0, "storage": "int" },
+    { "id": "^PIR_FREI_WINS", "label": "Pirate freighter battles won", "target": 0, "storage": "int" },
+    { "id": "^DIST_PET_RIDE", "label": "Companion riding distance", "target": 0, "storage": "float" },
+    { "id": "^DIST_SUB", "label": "Nautilon travel", "target": 0, "storage": "float" },
+    { "id": "^RUINS_LOOTED", "label": "Ruins looted", "target": 0, "storage": "int" },
+    { "id": "^PREDS_KILLED", "label": "Predators defeated", "target": 0, "storage": "int" },
+    { "id": "^DIST_BIGGS", "label": "Corvette travel", "target": 0, "storage": "float" },
+    { "id": "^SPOOKBOSS", "label": "Derelict bosses defeated", "target": 0, "storage": "int" },
+    { "id": "^MONEY_EVER", "label": "Lifetime units", "target": 2000000, "storage": "int" },
+    { "id": "^DIST_EXO", "label": "Exocraft travel", "target": 0, "storage": "float" },
+    { "id": "^MECHS_KILLED", "label": "Sentinel mechs defeated", "target": 0, "storage": "int" },
+    { "id": "^ASTEROIDS", "label": "Asteroids destroyed", "target": 0, "storage": "int" },
+    { "id": "^SALVAGE_LOOTED", "label": "Salvage looted", "target": 0, "storage": "int" },
+    { "id": "^EX_RAD_WALK", "label": "Extreme radiation travel", "target": 0, "storage": "float" },
+    { "id": "^STONE_KILLS", "label": "Stone enemies defeated", "target": 0, "storage": "int" },
+    { "id": "^STORM_WALK", "label": "Storm survival", "target": 0, "storage": "float" },
+    { "id": "^DIST_PET_FLY", "label": "Flying companion travel", "target": 0, "storage": "float" },
+    { "id": "^FOS_MADE", "label": "Fossils assembled", "target": 0, "storage": "int" },
+    { "id": "^DIST_OTH_BIGGS", "label": "Other Corvette travel", "target": 0, "storage": "float" },
+    { "id": "^CAVE_WALK", "label": "Cave exploration", "target": 0, "storage": "float" },
+    { "id": "^S20_JELLYBOSS", "label": "Expedition jellyfish defeated", "target": 0, "storage": "int" },
+    { "id": "^SPOOK_KILLS", "label": "Derelict enemies defeated", "target": 0, "storage": "int" },
+    { "id": "^DRONES_KILLED", "label": "Sentinel drones defeated", "target": 0, "storage": "int" },
+    { "id": "^NEXUS_STAND", "label": "Nexus standing", "target": 0, "storage": "int" },
+    { "id": "^KILLS_IN_MECH", "label": "Minotaur kills", "target": 0, "storage": "int" },
+    { "id": "^EX_TOX_WALK", "label": "Extreme toxicity travel", "target": 0, "storage": "float" },
+    { "id": "^MINIWORM_KILL", "label": "Burrowing horrors defeated", "target": 0, "storage": "int" },
+    { "id": "^SPOOK_JUICE", "label": "Tainted metal collected", "target": 0, "storage": "int" },
+    { "id": "^SENTFREI_KILLED", "label": "Sentinel freighters defeated", "target": 0, "storage": "int" },
+    { "id": "^DIST_JETPACK", "label": "Jetpack travel", "target": 0, "storage": "float" },
+    { "id": "^PB_CHALL_WINS", "label": "Arena challenge-hall wins", "target": 220, "storage": "int" },
+    { "id": "^DIST_SPACE", "label": "Time in space", "target": 0, "storage": "int" },
+    { "id": "^POLICE_KILLED", "label": "System authority ships defeated", "target": 0, "storage": "int" }
+  ],
+  "naturalNegativeStatAllowlist": [
+    "^CRUISE"
+  ]
+}

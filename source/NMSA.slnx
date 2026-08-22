@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="desktop/AtlasComplete.Desktop/AtlasComplete.Desktop.csproj" />
+  <Project Path="desktop/AtlasComplete.Desktop.Verification/AtlasComplete.Desktop.Verification.csproj" />
+</Solution>

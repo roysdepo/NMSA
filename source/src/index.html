@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta
+      name="description"
+      content="Offline No Man's Sky completion, repair, backup and recovery utility"
+    />
+    <title>NMSA v__ATLAS_VERSION__ — No Man's Sky Atlas</title>
+    <style>/*__INLINE_CSS__*/</style>
+  </head>
+  <body>
+    <div class="stars" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero-brand-mark" aria-hidden="true">
+        <img src="__NMSA_HEADER_MARK_IMAGE__" alt="" width="360" height="360" decoding="async" />
+      </div>
+      <div class="hero-content shell">
+        <div class="hero-copy">
+          <div class="brand-row">
+            <div>
+              <p class="eyebrow">Completion · repair · recovery</p>
+              <h1>NMSA</h1>
+              <p class="brand-expansion">No Man’s Sky Atlas</p>
+            </div>
+            <span class="version">v__ATLAS_VERSION__</span>
+          </div>
+          <p class="lede">
+            Complete legitimate No Man’s Sky unlocks with platform-aware validation,
+            exact change previews, automatic backups and verified rollback.
+          </p>
+        </div>
+      </div>
+      <div class="status-strip shell">
+        <span class="privacy-pill"><span class="pulse-dot"></span>Files stay on this device</span>
+        <span id="environmentBadge" class="environment-badge">Checking environment…</span>
+        <span id="gameBadge" class="environment-badge hidden">Game status</span>
+      </div>
+    </header>
+
+    <main class="shell main-grid">
+      <section class="panel upload-panel" aria-labelledby="files-heading">
+        <div class="step-heading">
+          <span class="step-number">1</span>
+          <div>
+            <h2 id="files-heading">Choose your game save</h2>
+            <p>Atlas finds every companion file and names each slot automatically.</p>
+          </div>
+        </div>
+
+        <div class="folder-picker">
+          <span class="folder-icon" aria-hidden="true">⌕</span>
+          <div>
+            <strong id="sourceTitle">Find installed saves</strong>
+            <span id="sourceDescription">Steam, GOG and Xbox profiles are detected automatically.</span>
+          </div>
+          <button id="browseButton" class="button primary" type="button">Find my saves</button>
+        </div>
+
+        <div class="secondary-actions">
+          <button id="otherFolderButton" class="button ghost" type="button">Open another folder</button>
+          <button id="portableButton" class="button ghost" type="button">Load extracted console folder</button>
+        </div>
+
+        <input id="folderInput" class="hidden-folder-input" type="file" webkitdirectory directory multiple />
+
+        <p id="folderStatus" class="folder-status" aria-live="polite">Looking for the Atlas desktop bridge…</p>
+        <div id="sourceWarnings" class="warning-stack hidden" aria-live="polite"></div>
+
+        <div id="saveList" class="save-list" aria-live="polite">
+          <div class="save-placeholder">No save profiles scanned yet.</div>
+        </div>
+
+        <div class="action-row load-row">
+          <button id="loadButton" class="button primary" type="button" disabled>Load selected save</button>
+        </div>
+        <p class="workflow-note"><strong>How it works:</strong> select a save, load it, review the checked unlock groups, then press <strong>Save changes to game</strong>. Atlas makes a backup automatically.</p>
+      </section>
+
+      <aside class="panel baseline-panel">
+        <div class="baseline-heading">
+          <div>
+            <p class="eyebrow">Unlock database · already included</p>
+            <h2 id="baselineTitle">Loading baseline…</h2>
+          </div>
+          <span id="dataSourceBadge" class="mini-badge">Built in</span>
+        </div>
+        <p id="baselineDetails"></p>
+        <dl id="baselineCounts" class="baseline-counts"></dl>
+        <div class="data-actions">
+          <button id="importDataButton" class="button ghost" type="button">Optional database update</button>
+          <button id="resetDataButton" class="text-button hidden" type="button">Use built-in data</button>
+          <input id="dataPackageInput" class="hidden-folder-input" type="file" accept=".json,.atlaspack" />
+        </div>
+        <p id="dataPackageStatus" class="small-note">No import is needed. An .atlaspack only updates Atlas's unlock lists; it never edits a game save.</p>
+      </aside>
+
+      <section id="analysisPanel" class="panel full-span hidden" aria-labelledby="analysis-heading">
+        <div class="step-heading analysis-heading-row">
+          <span class="step-number">2</span>
+          <div>
+            <h2 id="analysis-heading">Completion health & compatibility</h2>
+            <p id="analysisSummary">Waiting for a save.</p>
+          </div>
+          <span id="verifiedBadge" class="verified-badge">Verified</span>
+        </div>
+
+        <div class="analysis-overview">
+          <div class="health-card">
+            <div class="health-ring" id="healthRing"><strong id="healthScore">0%</strong></div>
+            <div>
+              <span>Completion health</span>
+              <strong id="healthGrade">Checking</strong>
+              <small id="healthDetail"></small>
+            </div>
+          </div>
+          <div class="context-card">
+            <label for="contextSelect">Target player context</label>
+            <select id="contextSelect"></select>
+            <small id="contextDetail"></small>
+          </div>
+          <div class="compatibility-card" id="compatibilityCard">
+            <span>Write compatibility</span>
+            <strong id="compatibilityStatus">Checking</strong>
+            <small id="compatibilityDetail"></small>
+          </div>
+        </div>
+
+        <div id="auditCards" class="audit-cards"></div>
+
+        <details class="compatibility-details">
+          <summary>Format and validation details</summary>
+          <div id="compatibilityGrid" class="detail-grid"></div>
+        </details>
+
+        <details class="ownership-audit">
+          <summary>Ownership audit details</summary>
+          <div id="ownershipAudit" class="ownership-grid"></div>
+        </details>
+      </section>
+
+      <section id="optionsPanel" class="panel full-span hidden" aria-labelledby="options-heading">
+        <div class="step-heading">
+          <span class="step-number">3</span>
+          <div>
+            <h2 id="options-heading">Choose changes and save</h2>
+            <p>Checked groups are applied only when you press Save changes to game.</p>
+          </div>
+          <label class="preset-control">Preset
+            <select id="presetSelect">
+              <option value="safe">Natural 100% completion</option>
+              <option value="rewards">Rewards only</option>
+              <option value="catalogue">Catalogue & blueprints</option>
+              <option value="repair">Repair only</option>
+              <option value="full">Full convenience</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="option-grid">
+          <label class="option-card">
+            <input id="optionRewards" type="checkbox" checked />
+            <span><strong>Rewards & cosmetics</strong><small>Season, Twitch rewards and titles; licensed/platform entitlements are preserved</small></span>
+          </label>
+          <label class="option-card">
+            <input id="optionBlueprints" type="checkbox" checked />
+            <span><strong>Blueprints & recipes</strong><small>Legitimate products, technology and refiner recipes</small></span>
+          </label>
+          <label class="option-card">
+            <input id="optionLanguage" type="checkbox" checked />
+            <span><strong>Language, runes & slots</strong><small>Current words, glyphs, pet slots and squadron slots</small></span>
+          </label>
+          <label class="option-card">
+            <input id="optionCatalogue" type="checkbox" checked />
+            <span><strong>Catalogue & legitimate records</strong><small>All finite entries: 165 fossils, 309 ship parts, 226 fish, 1,289 build records, 40 story pages and 11 reality glitches</small></span>
+          </label>
+          <label class="option-card">
+            <input id="optionMilestones" type="checkbox" />
+            <span><strong>Natural milestones & standing</strong><small>Optional: raise gameplay progression to real title thresholds</small></span>
+          </label>
+          <label class="option-card">
+            <input id="optionRepair" type="checkbox" checked />
+            <span><strong>Integrity repair</strong><small>Deduplicate lists, repair word groups and remove damaged/internal technology</small></span>
+          </label>
+          <label class="option-card caution">
+            <input id="optionProgression" type="checkbox" />
+            <span><strong>Progression conveniences</strong><small>Nexus, black holes, Builders and purple systems</small></span>
+          </label>
+        </div>
+
+        <div class="preview-panel">
+          <div>
+            <p class="eyebrow">Exact change preview</p>
+            <h3 id="previewTotal">0 pending changes</h3>
+          </div>
+          <div id="previewRows" class="preview-rows"></div>
+        </div>
+
+        <details class="advanced" id="ownershipDetails">
+          <summary><span>Advanced ownership repair</span><span class="summary-note">Off by default</span></summary>
+          <div class="advanced-body">
+            <label class="switch-row">
+              <input id="ownershipEnabled" type="checkbox" />
+              <span><strong>Enable scoped ownership repair</strong><small>Only identities entered below are treated as yours.</small></span>
+            </label>
+            <div id="ownershipFields" class="ownership-fields disabled" inert aria-disabled="true">
+              <h3>Primary identity</h3>
+              <div class="identity-row primary-identity">
+                <label>Platform<select data-field="PTK"><option value="ST">Steam</option><option value="PS">PlayStation</option><option value="XB">Xbox</option></select></label>
+                <label>Username<input data-field="USN" type="text" autocomplete="off" /></label>
+                <label>UID<input data-field="UID" type="text" autocomplete="off" /></label>
+                <label>Local ID<input data-field="LID" type="text" autocomplete="off" /></label>
+              </div>
+              <div class="alias-heading"><h3>Other identities you own</h3><button id="addAliasButton" class="text-button" type="button">+ Add identity</button></div>
+              <div id="aliasRows"></div>
+              <template id="aliasRowTemplate">
+                <div class="identity-row alias-row">
+                  <label>Platform<select data-field="PTK"><option value="ST">Steam</option><option value="PS">PlayStation</option><option value="XB">Xbox</option></select></label>
+                  <label>Username<input data-field="USN" type="text" autocomplete="off" /></label>
+                  <label>UID<input data-field="UID" type="text" autocomplete="off" /></label>
+                  <label>Local ID<input data-field="LID" type="text" autocomplete="off" /></label>
+                  <button class="remove-alias" type="button" aria-label="Remove identity">×</button>
+                </div>
+              </template>
+              <div class="ownership-actions">
+                <label><input id="normalizeBases" type="checkbox" checked />Assign persistent bases to the primary identity</label>
+                <label><input id="normalizeDiscoveries" type="checkbox" checked />Normalize only discoveries matching an entered UID</label>
+                <label><input id="clearEditorLabels" type="checkbox" checked />Clear imported base editor labels</label>
+              </div>
+              <p class="guardrail">Foreign discoveries, settlements, eggs, missions and downloaded world caches are never bulk-relabelled.</p>
+            </div>
+          </div>
+        </details>
+
+        <div id="writeBlocker" class="write-blocker hidden"></div>
+        <div class="complete-row">
+          <div>
+            <strong id="outputHeading">Verified recovery output</strong>
+            <p id="outputDescription">Download a matched replacement set plus untouched originals.</p>
+          </div>
+          <div class="output-actions">
+            <button id="diagnosticButton" class="button ghost" type="button">Export safe diagnostic</button>
+            <button id="completeButton" class="button ghost" type="button">Download recovery ZIP</button>
+            <button id="installButton" class="button complete hidden" type="button">Save changes to game</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="templatePanel" class="panel full-span template-panel hidden" aria-labelledby="template-heading">
+        <div class="step-heading">
+          <span class="step-number">4</span>
+          <div>
+            <p class="eyebrow">Separate destructive tool</p>
+            <h2 id="template-heading">Save State Templates</h2>
+            <p>Replace the selected slot with a prebuilt progression tier. This is separate from legitimate completion and always creates a rollback backup.</p>
+          </div>
+          <span class="template-warning-badge">Full-slot replacement</span>
+        </div>
+
+        <div id="templateChoices" class="template-grid" role="radiogroup" aria-label="Save state template">
+          <label class="template-card">
+            <input type="radio" name="saveTemplate" value="god" checked />
+            <span class="template-card-body">
+              <span class="template-card-top"><strong>Full Progression</strong><span>Complete loadout</span></span>
+              <small>9 populated ships, 4 populated multitools, an S-class freighter, 30 frigates, 4 companions, max slot layouts, stocked inventories and boosted currencies.</small>
+            </span>
+          </label>
+          <label class="template-card">
+            <input type="radio" name="saveTemplate" value="demigod" />
+            <span class="template-card-body">
+              <span class="template-card-top"><strong>Explorer Progression</strong><span>Balanced loadout</span></span>
+              <small>Starter-level ship and multitool, a C-class freighter, 1 frigate, expanded character capacity and boosted progression without the full fleet and collection.</small>
+            </span>
+          </label>
+          <label class="template-card">
+            <input type="radio" name="saveTemplate" value="missions" />
+            <span class="template-card-body">
+              <span class="template-card-top"><strong>Mission Progress</strong><span>Missions only</span></span>
+              <small>Installs 511 completed Voyagers mission records while preserving the selected save’s character, inventory, currencies, ships, fleet, companions and bases.</small>
+            </span>
+          </label>
+        </div>
+
+        <div class="template-impact">
+          <div>
+            <p class="eyebrow">Selected target</p>
+            <h3 id="templateTargetName">Load a save to choose a target</h3>
+          </div>
+          <p id="templateImpact">Full Progression replaces the supplied player and spawn state, then applies Atlas Natural 100% and integrity repair.</p>
+        </div>
+
+        <label class="template-confirmation">
+          <input id="templateConfirm" type="checkbox" />
+          <span><strong>I understand this replaces the selected save state.</strong><small>The exact slot is backed up first and can be restored from Recovery. Other save slots are not changed.</small></span>
+        </label>
+
+        <div id="templateWriteBlocker" class="write-blocker hidden"></div>
+        <div class="complete-row">
+          <div>
+            <strong>Apply selected template</strong>
+            <p>Atlas preserves the destination slot/container wrapper, verifies the replacement, and reopens only this logical save.</p>
+          </div>
+          <div class="output-actions">
+            <button id="templateDownloadButton" class="button ghost" type="button" disabled>Download template recovery ZIP</button>
+            <button id="templateInstallButton" class="button complete hidden" type="button" disabled>Overwrite selected save</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="recoveryPanel" class="panel full-span recovery-panel" aria-labelledby="recovery-heading">
+        <div class="step-heading">
+          <span class="step-number">5</span>
+          <div><h2 id="recovery-heading">Recovery & local history</h2><p>Rollback points and privacy-safe completion records stay on this PC.</p></div>
+          <button id="refreshRecoveryButton" class="button ghost" type="button">Refresh</button>
+        </div>
+        <div class="recovery-grid">
+          <div><h3>Automatic backups</h3><div id="backupList" class="history-list"><p>No desktop backups loaded.</p></div></div>
+          <div><h3>Completion history</h3><div id="historyList" class="history-list"><p>No completion history yet.</p></div></div>
+        </div>
+      </section>
+
+      <section id="resultPanel" class="panel full-span result-panel hidden" aria-live="polite">
+        <div class="result-icon">✓</div>
+        <div><p class="eyebrow">Finished</p><h2 id="resultTitle" tabindex="-1">Verified output created</h2><p id="resultSummary"></p></div>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <p>Independent community utility. Not affiliated with Hello Games. Fully close No Man’s Sky before installing or restoring files.</p>
+    </footer>
+    <div class="landscape-footer" aria-hidden="true"></div>
+
+    <div id="activityPopup" class="activity-popup hidden" role="status" aria-live="polite" aria-atomic="true">
+      <div class="activity-heading">
+        <div class="activity-spinner" aria-hidden="true"></div>
+        <strong id="activityText">Working…</strong>
+      </div>
+      <div id="activityProgress" class="activity-progress" role="progressbar" aria-label="Task progress">
+        <span id="activityProgressFill"></span>
+      </div>
+    </div>
+    <div id="toast" class="toast hidden" role="alert"></div>
+    <script>/*__INLINE_JS__*/</script>
+  </body>
+</html>

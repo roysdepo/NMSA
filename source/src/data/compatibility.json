@@ -1,0 +1,61 @@
+{
+  "compatibilitySchemaVersion": 1,
+  "toolVersion": "3.0.6",
+  "gameBaseline": "No Man's Sky 6.45.1 / Swarm / Expedition 22",
+  "snapshotDate": "2026-06-22",
+  "activePackage": "builtin-6.45.1",
+  "writableSaveFormats": [
+    2004
+  ],
+  "knownSaveFormats": [
+    2001,
+    2002,
+    2003,
+    2004
+  ],
+  "minimumGameVersion": 4145,
+  "minimumWritableGameVersion": 4733,
+  "testedGameVersion": 4733,
+  "testedMetaBaseVersion": 4221,
+  "platformAdapters": [
+    "steam",
+    "gog",
+    "xbox-game-pass",
+    "playstation-extracted",
+    "switch-extracted"
+  ],
+  "sourceCounts": {
+    "knownProducts": 3501,
+    "contextualKnownProducts": 3,
+    "knownSpecials": 893,
+    "knownTechnologies": 204,
+    "disallowedKnownTechnologies": 129,
+    "disallowedSeenTechnologies": 129,
+    "refinerRecipes": 1681,
+    "wordGroups": 3827,
+    "seasonRewards": 278,
+    "twitchRewards": 405,
+    "platformRewards": 3,
+    "contentEntitlements": 3,
+    "titles": 339,
+    "seenSubstances": 111,
+    "wikiTopics": 57,
+    "fossilBlueprintRecords": 22,
+    "fossilComponentRecords": 143,
+    "fossilRecords": 165,
+    "shipComponentRecords": 309,
+    "speculativeShipComponentRecords": 309,
+    "catalogueRecordProducts": 474,
+    "catalogueOnlyProductRecords": 452,
+    "authoritativeCatalogueRecordProducts": 165,
+    "authoritativeCatalogueOnlyProductRecords": 143,
+    "fishingRecords": 226,
+    "seenBaseBuildingObjects": 1289,
+    "storyRecords": 40,
+    "anomalousBasePartRecords": 11,
+    "recordFamilies": 6,
+    "naturalProgressionTargets": 93,
+    "naturalStatRepairs": 51,
+    "titleBackedStatFamilies": 78
+  }
+}

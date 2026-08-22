@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: source
+    steps:
+      - name: Check out source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - name: Set up .NET
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+        with:
+          dotnet-version: 10.0.x
+      - name: Install locked JavaScript dependencies
+        run: npm ci
+      - name: Audit production JavaScript dependencies
+        run: npm audit --omit=dev
+      - name: Build verified web assets
+        run: npm run build
+      - name: Run browser and security tests
+        run: npm test
+      - name: Restore locked desktop dependencies
+        run: dotnet restore NMSA.slnx -p:PublishReadyToRun=true --locked-mode
+      - name: Audit .NET dependencies
+        run: dotnet package list --project NMSA.slnx --vulnerable --include-transitive --no-restore
+      - name: Build WPF release
+        run: dotnet build NMSA.slnx --configuration Release --no-restore -m:1
+      - name: Run native transaction verification
+        run: dotnet run --project desktop/AtlasComplete.Desktop.Verification/AtlasComplete.Desktop.Verification.csproj --configuration Release --no-build
